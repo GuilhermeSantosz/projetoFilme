@@ -1,0 +1,100 @@
+@use "variaveis";
+@use "header";
+@use "hero";
+
+@font-face {
+  font-family: Avenir;
+  src: url("../../assests/fonts/Avenir-Regular.woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Avenir;
+  src: url("../../assests/fonts/Avenir-Bold.woff2");
+  font-weight: 700;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Avenir, sans-serif;
+}
+
+body {
+  background-image: radial-gradient(circle, rgba(254,254,255,0) 0%, rgba(22,22,22,1) 90%),  url(../images/scale.jpeg);
+  background-size: cover;
+  overflow-y: hidden;
+
+
+}
+
+@mixin text($fontSize: 22px) {
+  font-size: $fontSize;
+  line-height: $fontSize + 10px;
+  color: #fff;
+}
+
+
+
+.text {
+  @include text;
+
+  @media (max-width: 768px) {
+    @include text(14px)
+  }
+}
+
+.text--small {
+  @include text(12px);
+
+  @media (max-width: 768px) {
+    @include text(11px)
+  }
+}
+
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  font-size: 18px;
+  color: variaveis.$corTextoSecundario;
+  background-color: variaveis.$corFundoBotaoPrimario;
+  text-transform: uppercase;
+  border-radius: 4px;
+  text-decoration: none;
+  padding: 8px 14px;
+  letter-spacing: 1px;
+  border: 1px solid variaveis.$corFundoBotaoPrimario;
+
+  
+  &:hover {
+      background-color: lighten(variaveis.$corFundoBotaoPrimario, 3%);
+    }
+    
+    &--secondary {
+        background-color: variaveis.$corFundoBotaoSecundario;
+        border-color: variaveis.$corFundoBotaoSecundario;
+        
+ 
+    &:hover {
+      background-color: lighten(variaveis.$corFundoBotaoSecundario, 3%);
+    }
+  }
+
+  &--dark {
+     background-color: rgba(variaveis.$corFundoBotaoDark, 0.8);
+     border-color: variaveis.$corTextoSecundario;
+     
+
+     &:hover {
+      background-color: variaveis.$corTextoSecundario;
+      color: variaveis.$corDeFundo;
+
+     }
+  }
+}
+
+

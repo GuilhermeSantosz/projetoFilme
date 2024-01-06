@@ -1,0 +1,59 @@
+@use "variaveis";
+
+.hero {
+  padding: 5.6vw;
+  min-height: 91vh;
+  
+  background-size: cover;
+  
+
+
+  @media (max-width:768px) {
+   
+    margin-top: -55px;
+  }
+
+  .button {
+    margin-top: 2vw;
+    margin-bottom: 8px;
+
+  }
+
+  &__content {
+    max-width: 640px;
+
+    img {
+         width: 380px;
+
+         @media (max-width:768px) {
+            width: 340px;
+          }
+        
+    }
+
+    &__branding {
+      max-width: 320px;
+      margin: 0 auto 38px;
+
+    }
+
+    
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    &__about{
+        display: flex;
+        align-items: center;
+
+        &__item {
+            list-style: none;
+            padding-right: 10px;
+           img {
+                width: 40px;
+            }
+        }
+    }
+  }
+}
